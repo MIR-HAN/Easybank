@@ -1,0 +1,60 @@
+.header {
+    position: relative;
+    z-index: 1;
+    margin-top: 14px;
+
+    nav {
+        position: relative;
+        background-color: $white;
+        padding-top: 18px;
+        padding-bottom: 15px;
+    }
+
+    &__logo {
+        img {
+            width: 140px;
+            height: 18px;
+        }
+    }
+
+    &__menu {
+        width: calc(100% - 48px);
+        left: 50%;
+        margin-left: 20%;
+
+        a {
+            position: relative;
+            font-size: $font-sm;
+            color: $grayishBlue;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 5px;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            &:hover {
+                color: $darkBlue;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .button {
+        margin-top: -10px;
+    }
+
+}
